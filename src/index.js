@@ -1,14 +1,14 @@
 module.exports = function getZerosCount(number) {
   let count = 0;
-  function check(number){
-    if (number % 5 === 0)
-    { count++;
-      check(number / 5);
-     };
-  }
   for(let i = 1; i <= number; i++){
-    check(i);
+    if (i % 5 === 0)
+    { count++;
+      let a = i;
+      while((a/5) % 5 === 0){
+        count++;
+        a = a / 5;
+      };
+     };
   };
-  console.log(count);
   return count;
 };
